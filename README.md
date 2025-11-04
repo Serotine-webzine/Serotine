@@ -17,7 +17,7 @@ Afin de poster un commentaire, il est nécessaire de créer un compte sur GitHub
 
 ## Saison 1
 
-### #1 Octobre 2025
+### #1 Novembre 2025
 
 <!-- Flexbox (fonctionne dans la plupart des renderers Markdown qui acceptent du HTML inline) -->
 <div style="display:flex; align-items:flex-start; gap:16px; max-width:100%;">
@@ -39,13 +39,13 @@ Afin de poster un commentaire, il est nécessaire de créer un compte sur GitHub
   </div>
 </div>
 
-### #2 Novembre 2025
+### #2 Décembre 2025
 - Rendez-vous fin-novembre
 
-### #3 Janvier 2025
+### #3 Février 2025
 - Rendez-vous début-janvier
 
-### #4 Février 2025
+### #4 Mars 2025
 - Rendez-vous mi-février
 
 ---
