@@ -23,7 +23,7 @@ Afin de poster un commentaire, il est nécessaire de créer un compte sur GitHub
 <div style="display:flex; align-items:flex-start; gap:16px; max-width:100%;">
   <!-- Colonne image (fixe / adaptative) -->
   <div style="flex: 0 0 auto;">
-    <a href="https://www.auroralpes.fr/" target="_blank">
+    <a href="https://heyzine.com/flip-book/78d38fd9ec.html" target="_blank">
       <img src="media/Sérotine1.jpg" alt="Couverture du #1"
           style="display:block; max-width:150px; height:auto; border-radius:6px;" />
     </a>
