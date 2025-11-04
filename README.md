@@ -40,13 +40,13 @@ Afin de poster un commentaire, il est nécessaire de créer un compte sur GitHub
 </div>
 
 ### #2 Décembre 2025
-- Rendez-vous fin-novembre
+- Rendez-vous mi-décembre
 
 ### #3 Février 2025
-- Rendez-vous début-janvier
+- Rendez-vous début-février
 
 ### #4 Mars 2025
-- Rendez-vous mi-février
+- Rendez-vous mi-mars
 
 ---
 
