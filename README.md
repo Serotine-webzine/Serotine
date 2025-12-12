@@ -24,7 +24,7 @@ Afin de poster un commentaire, il est nécessaire de créer un compte sur GitHub
   <!-- Colonne image (fixe / adaptative) -->
   <div style="flex: 0 0 auto;">
     <a href="https://heyzine.com/flip-book/78d38fd9ec.html" target="_blank">
-      <img src="media/Sérotine1.jpg" alt="Couverture du #1"
+      <img src="media/Serotine1.jpg" alt="Couverture du #1"
           style="display:block; max-width:150px; height:auto; border-radius:6px;" />
     </a>
   </div>
@@ -46,7 +46,7 @@ Afin de poster un commentaire, il est nécessaire de créer un compte sur GitHub
   <!-- Colonne image (fixe / adaptative) -->
   <div style="flex: 0 0 auto;">
     <a href="https://heyzine.com/flip-book/5f6791f646.html" target="_blank">
-      <img src="media/Sérotine2.jpg" alt="Couverture du #1"
+      <img src="media/Serotine2.jpg" alt="Couverture du #1"
           style="display:block; max-width:150px; height:auto; border-radius:6px;" />
     </a>
   </div>
