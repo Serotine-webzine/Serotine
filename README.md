@@ -40,7 +40,26 @@ Afin de poster un commentaire, il est nécessaire de créer un compte sur GitHub
 </div>
 
 ### #2 Décembre 2025
-- Rendez-vous mi-décembre
+
+<!-- Flexbox (fonctionne dans la plupart des renderers Markdown qui acceptent du HTML inline) -->
+<div style="display:flex; align-items:flex-start; gap:16px; max-width:100%;">
+  <!-- Colonne image (fixe / adaptative) -->
+  <div style="flex: 0 0 auto;">
+    <a href="https://heyzine.com/flip-book/5f6791f646.html" target="_blank">
+      <img src="media/Sérotine2.jpg" alt="Couverture du #1"
+          style="display:block; max-width:150px; height:auto; border-radius:6px;" />
+    </a>
+  </div>
+
+  <!-- Colonne texte (liste) -->
+  <div style="flex: 1 1 auto;">
+    <ul style="margin:0; padding-left:1.2em;">
+      <li><a href="articles/hydrocerame.html" target="_blank">L'aphantasie</a></li>
+      <li><a href="articles/aphantasie_sudoku_2.html" target="_blank">Ceci n'est pas un bouquet de fleurs (Sudoku)</a></li>
+      <li><a href="articles/planete_neuf.html" target="_blank">Peut-on respirer par l'anus ?</a></li>
+    </ul>
+  </div>
+</div>
 
 ### #3 Février 2025
 - Rendez-vous début-février
