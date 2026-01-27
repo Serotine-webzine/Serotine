@@ -62,7 +62,26 @@ Afin de poster un commentaire, il est nécessaire de créer un compte sur GitHub
 </div>
 
 ### #3 Février 2025
-- Rendez-vous début-février
+
+<!-- Flexbox (fonctionne dans la plupart des renderers Markdown qui acceptent du HTML inline) -->
+<div style="display:flex; align-items:flex-start; gap:16px; max-width:100%;">
+  <!-- Colonne image (fixe / adaptative) -->
+  <div style="flex: 0 0 auto;">
+    <a href="" target="_blank">
+      <img src="media/Serotine3.jpg" alt="Couverture du #1"
+          style="display:block; max-width:150px; height:auto; border-radius:6px;" />
+    </a>
+  </div>
+
+  <!-- Colonne texte (liste) -->
+  <div style="flex: 1 1 auto;">
+    <ul style="margin:0; padding-left:1.2em;">
+      <li><a href="articles/crush.html" target="_blank">Les secrets insoupçonnés du «crush»</a></li>
+      <li><a href="articles/ode_celeste.html" target="_blank">Ode céleste</a></li>
+      <li><a href="articles/tca.html" target="_blank">Red flags et nourriture, quand les TCA s'invitent à table</a></li>
+    </ul>
+  </div>
+</div>
 
 ### #4 Mars 2025
 - Rendez-vous mi-mars
