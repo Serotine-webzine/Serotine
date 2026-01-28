@@ -54,9 +54,9 @@ Afin de poster un commentaire, il est nécessaire de créer un compte sur GitHub
   <!-- Colonne texte (liste) -->
   <div style="flex: 1 1 auto;">
     <ul style="margin:0; padding-left:1.2em;">
-      <li><a href="articles/hydrocerame.html" target="_blank">L'aphantasie</a></li>
+      <li><a href="articles/hydrocerame.html" target="_blank">Les hydrocérames, ces vases qui suent</a></li>
       <li><a href="articles/aphantasie_sudoku_2.html" target="_blank">Ceci n'est pas un bouquet de fleurs (Sudoku)</a></li>
-      <li><a href="articles/planete_neuf.html" target="_blank">Peut-on respirer par l'anus ?</a></li>
+      <li><a href="articles/planete_neuf.html" target="_blank">Une neuvième planète dans notre système solaire</a></li>
     </ul>
   </div>
 </div>
