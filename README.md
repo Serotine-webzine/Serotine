@@ -33,8 +33,8 @@ Afin de poster un commentaire, il est nécessaire de créer un compte sur GitHub
   <div style="flex: 1 1 auto;">
     <ul style="margin:0; padding-left:1.2em;">
       <li><a href="https://heyzine.com/flip-book/78d38fd9ec.html#page/4" target="_blank">L'aphantasie</a> <a href="articles/aphantasie.html" target="_blank">[Commentaire]</a></li>
-      <li><a href="articles/aphantasie_sudoku.html" target="_blank">Ceci n'est pas un bouquet de fleurs (Sudoku)</a></li>
-      <li><a href="articles/respirer_par_anus.html" target="_blank">Peut-on respirer par l'anus ?</a></li>
+      <li><a href="https://heyzine.com/flip-book/78d38fd9ec.html#page/16" target="_blank">Ceci n'est pas un bouquet de fleurs (Sudoku)</a><a href="articles/aphantasie_sudoku.html" target="_blank">[Commentaire]</a></li>
+      <li><a href="https://heyzine.com/flip-book/78d38fd9ec.html#page/18" target="_blank">Peut-on respirer par l'anus ?</a><a href="articles/respirer_par_anus.html" target="_blank">[Commentaire]</a></li>
     </ul>
   </div>
 </div>
