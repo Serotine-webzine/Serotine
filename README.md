@@ -35,9 +35,9 @@ Afin de poster un commentaire, il est nécessaire de créer un compte sur GitHub
   <!-- Colonne texte (liste) -->
   <div style="flex: 1 1 auto;">
     <ul style="margin:0; padding-left:1.2em;">
-      <li><a href="https://heyzine.com/flip-book/d5c17bee9a.html#page/4" target="_blank">Les secrets insoupçonnés du «crush»</a><a href="articles/crush.html" target="_blank">[Commentaire]</a></li>
+      <li><a href="https://heyzine.com/flip-book/d5c17bee9a.html#page/4" target="_blank">Les secrets insoupçonnés du «crush»</a><a href="articles/crush.html" target="_blank">   [Commentaire]</a></li>
       <li><a href="https://heyzine.com/flip-book/d5c17bee9a.html#page/12" target="_blank">Ode céleste</a><a href="articles/ode_celeste.html" target="_blank">   [Commentaire]</a></li>
-      <li><a href="https://heyzine.com/flip-book/d5c17bee9a.html#page/15" target="_blank">Red flags et nourriture, quand les TCA s'invitent à table</a><a href="articles/tca.html" target="_blank">[Commentaire]</a></li>
+      <li><a href="https://heyzine.com/flip-book/d5c17bee9a.html#page/15" target="_blank">Red flags et nourriture, quand les TCA s'invitent à table</a><a href="articles/tca.html" target="_blank">   [Commentaire]</a></li>
     </ul>
   </div>
 </div>
@@ -57,9 +57,9 @@ Afin de poster un commentaire, il est nécessaire de créer un compte sur GitHub
   <!-- Colonne texte (liste) -->
   <div style="flex: 1 1 auto;">
     <ul style="margin:0; padding-left:1.2em;">
-      <li><a href="https://heyzine.com/flip-book/5f6791f646.html#page/4" target="_blank">Les hydrocérames, ces vases qui suent</a><a href="articles/hydrocerame.html" target="_blank">[Commentaire]</a></li>
-      <li><a href="https://heyzine.com/flip-book/5f6791f646.html#page/16" target="_blank">Ceci n'est pas un bouquet de fleurs (Sudoku)</a><a href="articles/aphantasie_sudoku_2.html" target="_blank">[Commentaire]</a></li>
-      <li><a href="https://heyzine.com/flip-book/5f6791f646.html#page/18" target="_blank">Une neuvième planète dans notre système solaire</a><a href="articles/planete_neuf.html" target="_blank">[Commentaire]</a></li>
+      <li><a href="https://heyzine.com/flip-book/5f6791f646.html#page/4" target="_blank">Les hydrocérames, ces vases qui suent</a><a href="articles/hydrocerame.html" target="_blank">   [Commentaire]</a></li>
+      <li><a href="https://heyzine.com/flip-book/5f6791f646.html#page/16" target="_blank">Ceci n'est pas un bouquet de fleurs (Sudoku)</a><a href="articles/aphantasie_sudoku_2.html" target="_blank">   [Commentaire]</a></li>
+      <li><a href="https://heyzine.com/flip-book/5f6791f646.html#page/18" target="_blank">Une neuvième planète dans notre système solaire</a><a href="articles/planete_neuf.html" target="_blank">   [Commentaire]</a></li>
     </ul>
   </div>
 </div>
@@ -79,9 +79,9 @@ Afin de poster un commentaire, il est nécessaire de créer un compte sur GitHub
   <!-- Colonne texte (liste) -->
   <div style="flex: 1 1 auto;">
     <ul style="margin:0; padding-left:1.2em;">
-      <li><a href="https://heyzine.com/flip-book/78d38fd9ec.html#page/4" target="_blank">L'aphantasie</a> <a href="articles/aphantasie.html" target="_blank">[Commentaire]</a></li>
-      <li><a href="https://heyzine.com/flip-book/78d38fd9ec.html#page/16" target="_blank">Ceci n'est pas un bouquet de fleurs (Sudoku)</a><a href="articles/aphantasie_sudoku.html" target="_blank">[Commentaire]</a></li>
-      <li><a href="https://heyzine.com/flip-book/78d38fd9ec.html#page/18" target="_blank">Peut-on respirer par l'anus ?</a><a href="articles/respirer_par_anus.html" target="_blank">[Commentaire]</a></li>
+      <li><a href="https://heyzine.com/flip-book/78d38fd9ec.html#page/4" target="_blank">L'aphantasie</a> <a href="articles/aphantasie.html" target="_blank">   [Commentaire]</a></li>
+      <li><a href="https://heyzine.com/flip-book/78d38fd9ec.html#page/16" target="_blank">Ceci n'est pas un bouquet de fleurs (Sudoku)</a><a href="articles/aphantasie_sudoku.html" target="_blank">   [Commentaire]</a></li>
+      <li><a href="https://heyzine.com/flip-book/78d38fd9ec.html#page/18" target="_blank">Peut-on respirer par l'anus ?</a><a href="articles/respirer_par_anus.html" target="_blank">   [Commentaire]</a></li>
     </ul>
   </div>
 </div>
