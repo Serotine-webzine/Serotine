@@ -8,10 +8,10 @@
   </a>
 </div>
 
-Bienvenue sur la page du webzine **Serotine, un souffle de science**, portée par l'association AurorAlpes.
-Vous pouvez retrouver ci-dessous, les articles associés aux différents numéros du webzine.
+Bienvenue sur la page du webzine **Serotine, un souffle de science**, portée par l'association [AurorAlpes](https://www.auroralpes.fr/).
+Retrouver ci-dessous, les différents numéros du webzine !
 
-Afin de poster un commentaire, il est nécessaire de créer un compte sur GitHub (il est possible de le faire à partir d'un compte Google).
+_Afin de poster un commentaire, il est nécessaire de créer un compte sur GitHub (il est possible de le faire à partir d'un compte Google)._
 
 ## Saison 1
 
