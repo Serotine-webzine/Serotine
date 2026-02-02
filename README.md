@@ -10,8 +10,8 @@
 
 # Espace commentaires
 
-Bienvenue dans l'espace commentaire du projet Serotine portée par l'association AurorAlpes.
-Vous pouvez retrouver ci-dessous, les commentaires associés aux différents numéros du webzine.
+Bienvenue sur la page du webzine **Serotine, un souffle de science**, portée par l'association AurorAlpes.
+Vous pouvez retrouver ci-dessous, les articles associés aux différents numéros du webzine.
 
 Afin de poster un commentaire, il est nécessaire de créer un compte sur GitHub (il est possible de le faire à partir d'un compte Google).
 
@@ -32,7 +32,7 @@ Afin de poster un commentaire, il est nécessaire de créer un compte sur GitHub
   <!-- Colonne texte (liste) -->
   <div style="flex: 1 1 auto;">
     <ul style="margin:0; padding-left:1.2em;">
-      <li><a href="articles/aphantasie.html" target="_blank">L'aphantasie</a></li>
+      <li><a href="https://heyzine.com/flip-book/78d38fd9ec.html#page/4" target="_blank">L'aphantasie</a></li> <a href="articles/aphantasie.html" target="_blank">\[Commentaire\]</a></li>
       <li><a href="articles/aphantasie_sudoku.html" target="_blank">Ceci n'est pas un bouquet de fleurs (Sudoku)</a></li>
       <li><a href="articles/respirer_par_anus.html" target="_blank">Peut-on respirer par l'anus ?</a></li>
     </ul>
