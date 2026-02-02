@@ -15,10 +15,10 @@ _Afin de poster un commentaire, il est nécessaire de créer un compte sur GitHu
 
 ## Saison 1
 
-### #4 Mars 2025
+### #4 Mars 2026
 - Rendez-vous mi-mars
 
-### #3 Février 2025
+### #3 Février 2026
 
 <!-- Flexbox (fonctionne dans la plupart des renderers Markdown qui acceptent du HTML inline) -->
 <div style="display:flex; align-items:flex-start; gap:16px; max-width:100%;">
