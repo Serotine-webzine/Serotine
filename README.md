@@ -8,8 +8,6 @@
   </a>
 </div>
 
-# Espace commentaires
-
 Bienvenue sur la page du webzine **Serotine, un souffle de science**, portée par l'association AurorAlpes.
 Vous pouvez retrouver ci-dessous, les articles associés aux différents numéros du webzine.
 
