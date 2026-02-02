@@ -17,6 +17,53 @@ Afin de poster un commentaire, il est nécessaire de créer un compte sur GitHub
 
 ## Saison 1
 
+### #4 Mars 2025
+- Rendez-vous mi-mars
+
+### #3 Février 2025
+
+<!-- Flexbox (fonctionne dans la plupart des renderers Markdown qui acceptent du HTML inline) -->
+<div style="display:flex; align-items:flex-start; gap:16px; max-width:100%;">
+  <!-- Colonne image (fixe / adaptative) -->
+  <div style="flex: 0 0 auto;">
+    <a href="https://heyzine.com/flip-book/d5c17bee9a.html" target="_blank">
+      <img src="media/Serotine3.jpg" alt="Couverture du #3"
+          style="display:block; max-width:150px; height:auto; border-radius:6px;" />
+    </a>
+  </div>
+
+  <!-- Colonne texte (liste) -->
+  <div style="flex: 1 1 auto;">
+    <ul style="margin:0; padding-left:1.2em;">
+      <li><a href="https://heyzine.com/flip-book/d5c17bee9a.html#page/4" target="_blank">Les secrets insoupçonnés du «crush»</a><a href="articles/crush.html" target="_blank">[Commentaire]</a></li>
+      <li><a href="https://heyzine.com/flip-book/d5c17bee9a.html#page/12" target="_blank">Ode céleste</a><a href="articles/ode_celeste.html" target="_blank">   [Commentaire]</a></li>
+      <li><a href="https://heyzine.com/flip-book/d5c17bee9a.html#page/15" target="_blank">Red flags et nourriture, quand les TCA s'invitent à table</a><a href="articles/tca.html" target="_blank">[Commentaire]</a></li>
+    </ul>
+  </div>
+</div>
+
+### #2 Décembre 2025
+
+<!-- Flexbox (fonctionne dans la plupart des renderers Markdown qui acceptent du HTML inline) -->
+<div style="display:flex; align-items:flex-start; gap:16px; max-width:100%;">
+  <!-- Colonne image (fixe / adaptative) -->
+  <div style="flex: 0 0 auto;">
+    <a href="https://heyzine.com/flip-book/5f6791f646.html" target="_blank">
+      <img src="media/Serotine2.jpg" alt="Couverture du #2"
+          style="display:block; max-width:150px; height:auto; border-radius:6px;" />
+    </a>
+  </div>
+
+  <!-- Colonne texte (liste) -->
+  <div style="flex: 1 1 auto;">
+    <ul style="margin:0; padding-left:1.2em;">
+      <li><a href="https://heyzine.com/flip-book/5f6791f646.html#page/4" target="_blank">Les hydrocérames, ces vases qui suent</a><a href="articles/hydrocerame.html" target="_blank">[Commentaire]</a></li>
+      <li><a href="https://heyzine.com/flip-book/5f6791f646.html#page/16" target="_blank">Ceci n'est pas un bouquet de fleurs (Sudoku)</a><a href="articles/aphantasie_sudoku_2.html" target="_blank">[Commentaire]</a></li>
+      <li><a href="https://heyzine.com/flip-book/5f6791f646.html#page/18" target="_blank">Une neuvième planète dans notre système solaire</a><a href="articles/planete_neuf.html" target="_blank">[Commentaire]</a></li>
+    </ul>
+  </div>
+</div>
+
 ### #1 Novembre 2025
 
 <!-- Flexbox (fonctionne dans la plupart des renderers Markdown qui acceptent du HTML inline) -->
@@ -38,53 +85,6 @@ Afin de poster un commentaire, il est nécessaire de créer un compte sur GitHub
     </ul>
   </div>
 </div>
-
-### #2 Décembre 2025
-
-<!-- Flexbox (fonctionne dans la plupart des renderers Markdown qui acceptent du HTML inline) -->
-<div style="display:flex; align-items:flex-start; gap:16px; max-width:100%;">
-  <!-- Colonne image (fixe / adaptative) -->
-  <div style="flex: 0 0 auto;">
-    <a href="https://heyzine.com/flip-book/5f6791f646.html" target="_blank">
-      <img src="media/Serotine2.jpg" alt="Couverture du #2"
-          style="display:block; max-width:150px; height:auto; border-radius:6px;" />
-    </a>
-  </div>
-
-  <!-- Colonne texte (liste) -->
-  <div style="flex: 1 1 auto;">
-    <ul style="margin:0; padding-left:1.2em;">
-      <li><a href="articles/hydrocerame.html" target="_blank">Les hydrocérames, ces vases qui suent</a></li>
-      <li><a href="articles/aphantasie_sudoku_2.html" target="_blank">Ceci n'est pas un bouquet de fleurs (Sudoku)</a></li>
-      <li><a href="articles/planete_neuf.html" target="_blank">Une neuvième planète dans notre système solaire</a></li>
-    </ul>
-  </div>
-</div>
-
-### #3 Février 2025
-
-<!-- Flexbox (fonctionne dans la plupart des renderers Markdown qui acceptent du HTML inline) -->
-<div style="display:flex; align-items:flex-start; gap:16px; max-width:100%;">
-  <!-- Colonne image (fixe / adaptative) -->
-  <div style="flex: 0 0 auto;">
-    <a href="" target="_blank">
-      <img src="media/Serotine3.jpg" alt="Couverture du #3"
-          style="display:block; max-width:150px; height:auto; border-radius:6px;" />
-    </a>
-  </div>
-
-  <!-- Colonne texte (liste) -->
-  <div style="flex: 1 1 auto;">
-    <ul style="margin:0; padding-left:1.2em;">
-      <li><a href="articles/crush.html" target="_blank">Les secrets insoupçonnés du «crush»</a></li>
-      <li><a href="articles/ode_celeste.html" target="_blank">Ode céleste</a></li>
-      <li><a href="articles/tca.html" target="_blank">Red flags et nourriture, quand les TCA s'invitent à table</a></li>
-    </ul>
-  </div>
-</div>
-
-### #4 Mars 2025
-- Rendez-vous mi-mars
 
 ---
 
