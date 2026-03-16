@@ -16,7 +16,7 @@ _Afin de poster un commentaire, il est nécessaire de créer un compte sur GitHu
 
 ## Dernier webzine
 
-<iframe allowfullscreen="allowfullscreen" allow="clipboard-write" scrolling="no" class="fp-iframe" style="border: 1px solid lightgray; width: 100%; height: 400px;" src="https://heyzine.com/flip-book/d5c17bee9a.html"></iframe>
+<iframe allowfullscreen="allowfullscreen" allow="clipboard-write" scrolling="no" class="fp-iframe" style="border: 1px solid lightgray; width: 100%; height: 400px;" src="https://heyzine.com/flip-book/1dcdd0cd85.html"></iframe>
 
 ## Saison 1
 
