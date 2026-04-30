@@ -5,17 +5,17 @@ update_comite.py — Mise à jour automatique de comite.html depuis membres.csv
 Usage: python update_comite.py membres.csv
 
 Lit membres.csv et met à jour comite.html avec :
-  - La liste des membres actifs du comité de rédaction
+  - Une section unique "L'équipe — Membres du projet" regroupant comité ET membres projet
+    (les membres du comité reçoivent une pastille "Comité de rédaction")
   - La section "Anciens membres" (cachée par défaut)
-  - La section "Membres du projet"
 
 Colonnes attendues dans le CSV :
   Nom, Rôle, Biographie, URL, Type, Image
 
 Valeurs valides pour la colonne Type :
-  comite            → Comité de rédaction actuel
+  comite            → Comité de rédaction (affiché avec pastille dans la section équipe)
   ancien_membre     → Anciens membres du comité de rédaction
-  membre_projet     → Membres du projet
+  membre_projet     → Membres du projet (affichés classiquement dans la section équipe)
 
 Exécutez depuis le dossier racine du site (là où se trouve comite.html).
 """
@@ -98,7 +98,7 @@ def load_membres(csv_path: str) -> dict[str, list[dict]]:
 
     total = sum(len(v) for v in grouped.values())
     print(f"  ✓ {total} membres chargés  "
-          f"({len(grouped['comite'])} actifs, "
+          f"({len(grouped['comite'])} comité, "
           f"{len(grouped['ancien_membre'])} anciens, "
           f"{len(grouped['membre_projet'])} projet)")
     return grouped
@@ -122,7 +122,7 @@ def initials(nom: str) -> str:
 
 
 def render_avatar(membre: dict) -> str:
-    """Génère le bloc avatar : photo si dispo, sinon initiales."""
+    """Génère le bloc avatar : photo si dispo, sinon icône par défaut."""
     img = membre["image"]
     if img:
         return (
@@ -130,16 +130,24 @@ def render_avatar(membre: dict) -> str:
             f'<img src="{escape(img)}" alt="{escape(membre["nom"])}" '
             f'class="member-photo" loading="lazy"></div>'
         )
-    return(
+    return (
         f'<div class="member-avatar">'
         f'<img src="media/icon_rond.png" alt="{escape(membre["nom"])}" '
         f'class="member-photo" loading="lazy"></div>'
     )
 
 
-def render_card(membre: dict, compact: bool = False) -> str:
-    """Génère une carte membre HTML."""
+def render_card(membre: dict, compact: bool = False, show_badge: bool = False) -> str:
+    """Génère une carte membre HTML.
+
+    show_badge=True  → affiche la pastille "Comité de rédaction" sous le nom.
+    """
     avatar_html = render_avatar(membre)
+
+    badge_html = (
+        '<span class="badge-comite">Comité de rédaction</span>'
+        if show_badge else ""
+    )
 
     link_html = ""
     if membre["url"]:
@@ -162,29 +170,29 @@ def render_card(membre: dict, compact: bool = False) -> str:
       <div class="member-card{compact_cls}">
         {avatar_html}
         <div class="member-name">{escape(membre["nom"])}</div>
+        {badge_html}
         <div class="member-role">{escape(membre["role"])}</div>
         {bio_html}
         {link_html}
       </div>"""
 
 
-def render_members_grid(membres: list[dict], compact: bool = False) -> str:
-    cards = "\n".join(render_card(m, compact) for m in membres)
+def render_members_grid(membres: list[dict], compact: bool = False,
+                        badge_types: tuple = ()) -> str:
+    """
+    Génère la grille HTML.
+    badge_types : ensemble de valeurs `type` pour lesquelles afficher la pastille.
+    """
+    cards = "\n".join(
+        render_card(m, compact, show_badge=(m["type"] in badge_types))
+        for m in membres
+    )
     return f'    <div class="members-grid">\n{cards}\n    </div>'
 
 
 # ══════════════════════════════════════════════
 #  SECTION BUILDERS
 # ══════════════════════════════════════════════
-
-def build_comite_section(membres: list[dict]) -> str:
-    grid = render_members_grid(membres)
-    return f"""\
-    <!-- COMITE_START -->
-    <h2 class="section-title">Comité de rédaction actuel</h2>
-{grid}
-    <!-- COMITE_END -->"""
-
 
 def build_anciens_section(membres: list[dict]) -> str:
     if not membres:
@@ -202,10 +210,15 @@ def build_anciens_section(membres: list[dict]) -> str:
     <!-- ANCIENS_END -->"""
 
 
-def build_projet_section(membres: list[dict]) -> str:
-    if not membres:
+def build_projet_section(membres_comite: list[dict], membres_projet: list[dict]) -> str:
+    """
+    Regroupe comité + membres projet dans une seule section.
+    Les membres du comité reçoivent la pastille "Comité de rédaction".
+    """
+    tous = membres_comite + membres_projet
+    if not tous:
         return "    <!-- PROJET_START -->\n    <!-- PROJET_END -->"
-    grid = render_members_grid(membres)
+    grid = render_members_grid(tous, badge_types=("comite",))
     return f"""\
     <!-- PROJET_START -->
     <h2 class="section-title">L'équipe <small>Membres du projet</small></h2>
@@ -214,7 +227,7 @@ def build_projet_section(membres: list[dict]) -> str:
 
 
 # ══════════════════════════════════════════════
-#  STYLES À INJECTER (avatar + anciens + projet)
+#  STYLES À INJECTER
 # ══════════════════════════════════════════════
 
 EXTRA_CSS = """\
@@ -225,6 +238,16 @@ EXTRA_CSS = """\
       display: flex; align-items: center; justify-content: center;
       background: var(--ink); color: var(--paper);
       font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 400;
+    }
+
+    /* PASTILLE COMITÉ DE RÉDACTION */
+    .badge-comite {
+      display: inline-block;
+      font-size: .65rem; font-weight: 200; letter-spacing: .04em; text-transform: uppercase;
+      border: 1px solid var(--ink);
+      border-radius: 3px; padding: .15em .5em;
+      margin-bottom: .35rem;
+      vertical-align: middle;
     }
 
     /* CARTE COMPACTE (anciens membres) */
@@ -253,7 +276,7 @@ CSS_MARKER = "/* CSS INJECTED BY update_comite.py — ne pas supprimer cette lig
 # ══════════════════════════════════════════════
 
 def inject_comite(grouped: dict[str, list], comite_path: str) -> None:
-    """Patche comite.html en place avec les 3 sections."""
+    """Patche comite.html en place avec les sections fusionnées."""
     if not os.path.exists(comite_path):
         print(f"  ✗ {comite_path} introuvable — injection abandonnée.")
         sys.exit(1)
@@ -263,7 +286,7 @@ def inject_comite(grouped: dict[str, list], comite_path: str) -> None:
 
     changed = False
 
-    # ── 1. Injecter CSS si absent ────────────────────────────────────────
+    # ── 1. Injecter / mettre à jour le CSS ──────────────────────────────
     if CSS_MARKER not in html:
         html = html.replace("    /* MEMBER GRID */", EXTRA_CSS + "\n\n    /* MEMBER GRID */", 1)
         if CSS_MARKER not in html:
@@ -272,33 +295,20 @@ def inject_comite(grouped: dict[str, list], comite_path: str) -> None:
         print("  ✓ Styles CSS injectés")
         changed = True
     else:
-        # Remplacer les styles existants
         old_css = re.search(r'/\* AVATAR \*/.*?/\* CSS INJECTED BY update_comite\.py[^\*]*\*/', html, re.DOTALL)
         if old_css:
             html = html[:old_css.start()] + EXTRA_CSS + html[old_css.end():]
             print("  ✓ Styles CSS mis à jour")
             changed = True
 
-    # ── 2. Injecter section comité actif ─────────────────────────────────
-    new_comite = build_comite_section(grouped["comite"])
-    match = re.search(r'<!-- COMITE_START -->.*?<!-- COMITE_END -->', html, re.DOTALL)
-    if match:
-        html = html[:match.start()] + new_comite.strip() + html[match.end():]
-        print(f"  ✓ Section comité mise à jour ({len(grouped['comite'])} membres)")
+    # ── 2. Section comité séparée : supprimée / ignorée ──────────────────
+    # comité et projet sont désormais fusionnés dans PROJET_START/END.
+    # Si des balises COMITE_START/END subsistent dans le HTML, on les efface.
+    match_comite = re.search(r'<!-- COMITE_START -->.*?<!-- COMITE_END -->', html, re.DOTALL)
+    if match_comite:
+        html = html[:match_comite.start()] + html[match_comite.end():]
+        print("  ℹ  Ancienne section COMITE_START/END supprimée (fusionnée dans la section équipe)")
         changed = True
-    else:
-        # Fallback : remplacer le bloc membres-grid existant
-        old_block = re.search(
-            r'<h2 class="section-title">Les membres.*?</div>\s*\n\s*\n',
-            html, re.DOTALL
-        )
-        if old_block:
-            html = html[:old_block.start()] + new_comite + "\n\n" + html[old_block.end():]
-            print(f"  ✓ Section comité injectée ({len(grouped['comite'])} membres)")
-            changed = True
-        else:
-            print("  ⚠  Repère COMITE_START introuvable — section comité non injectée.")
-            print("     Ajoutez <!-- COMITE_START --> et <!-- COMITE_END --> dans comite.html")
 
     # ── 3. Injecter section anciens ──────────────────────────────────────
     new_anciens = build_anciens_section(grouped["ancien_membre"])
@@ -309,17 +319,19 @@ def inject_comite(grouped: dict[str, list], comite_path: str) -> None:
         changed = True
     else:
         print("  ⚠  Repère ANCIENS_START introuvable — section anciens non injectée.")
-        print("     Ajoutez <!-- ANCIENS_START --> et <!-- ANCIENS_END --> après la section comité.")
+        print("     Ajoutez <!-- ANCIENS_START --> et <!-- ANCIENS_END --> dans comite.html")
 
-    # ── 4. Injecter section projet ───────────────────────────────────────
-    new_projet = build_projet_section(grouped["membre_projet"])
+    # ── 4. Injecter section équipe unifiée (comité + projet) ─────────────
+    new_projet = build_projet_section(grouped["comite"], grouped["membre_projet"])
     match = re.search(r'<!-- PROJET_START -->.*?<!-- PROJET_END -->', html, re.DOTALL)
     if match:
         html = html[:match.start()] + new_projet.strip() + html[match.end():]
-        print(f"  ✓ Section projet mise à jour ({len(grouped['membre_projet'])} membres)")
+        nb = len(grouped["comite"]) + len(grouped["membre_projet"])
+        print(f"  ✓ Section équipe mise à jour ({nb} membres : "
+              f"{len(grouped['comite'])} comité + {len(grouped['membre_projet'])} projet)")
         changed = True
     else:
-        print("  ⚠  Repère PROJET_START introuvable — section projet non injectée.")
+        print("  ⚠  Repère PROJET_START introuvable — section équipe non injectée.")
         print("     Ajoutez <!-- PROJET_START --> et <!-- PROJET_END --> dans comite.html")
 
     if changed:
