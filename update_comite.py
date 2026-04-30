@@ -130,10 +130,10 @@ def render_avatar(membre: dict) -> str:
             f'<img src="{escape(img)}" alt="{escape(membre["nom"])}" '
             f'class="member-photo" loading="lazy"></div>'
         )
-    return (
-        f'<div class="member-avatar member-initials" aria-hidden="true">'
-        f'{escape(initials(membre["nom"]))}'
-        f'</div>'
+    return(
+        f'<div class="member-avatar">'
+        f'<img src="media/icon_rond.png" alt="{escape(membre["nom"])}" '
+        f'class="member-photo" loading="lazy"></div>'
     )
 
 
