@@ -3,11 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sérotine, Un souffle de science</title>
-  <link rel="icon" type="image/x-icon" href="media/favicon.ico">
+
+  <!-- ═══ TITLE ═══════════════════════════════════════════════════════════ -->
+  <title>Sérotine · Un souffle de science</title>
+
+  <!-- ═══ FAVICON (navigateur + Google Search icon) ════════════════════════
+       Placez aussi un favicon.ico à la RACINE du repo (pas seulement dans
+       media/) pour que Google l'affiche dans les résultats de recherche.    -->
+  <link rel="icon" type="image/svg+xml"  href="media/logo_serotine_site.svg">
+  <link rel="shortcut icon"              href="favicon.ico">
+  <link rel="icon" type="image/x-icon"  href="media/favicon.ico">
   <link rel="icon" type="image/png" sizes="192x192" href="media/icon-192.png">
-  <link rel="apple-touch-icon" href="media/apple-touch-icon.png">
-  <meta name="description" content="Sérotine, un souffle de science — votre futur webzine scientifique préféré">
+  <link rel="apple-touch-icon"          href="media/apple-touch-icon.png">
+
+  <!-- ═══ SEO — description affichée dans Google ══════════════════════════ -->
+  <meta name="description"
+        content="Sérotine, un souffle de science — le webzine associatif porté par AurorAlpes. Découvrez nos articles, numéros et podcast scientifiques.">
+
+  <!-- ═══ OPEN GRAPH (aperçu sur réseaux sociaux / liens partagés) ════════ -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://serotine-webzine.github.io/Serotine/">
+  <meta property="og:title"       content="Sérotine · Un souffle de science">
+  <meta property="og:description" content="Le webzine scientifique associatif porté par AurorAlpes. Articles, numéros et podcast.">
+  <meta property="og:image"       content="https://serotine-webzine.github.io/Serotine/media/Serotine4.jpg">
+  <meta property="og:locale"      content="fr_FR">
+
+  <!-- ═══ TWITTER CARD ════════════════════════════════════════════════════ -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Sérotine · Un souffle de science">
+  <meta name="twitter:description" content="Le webzine scientifique associatif porté par AurorAlpes.">
+  <meta name="twitter:image"       content="https://serotine-webzine.github.io/Serotine/media/Serotine4.jpg">
+
+  <!-- ═══ FONTS ═══════════════════════════════════════════════════════════ -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
@@ -301,10 +328,26 @@
   </section>
 
 
-  <!-- ARCHIVES -->
+    <!-- ARCHIVES -->
   <section class="section" id="archives">
     <h2 class="section-title">Anciens numéros <small>Tous les numéros</small></h2>
     <details open>
+      <summary>Saison 2</summary>
+      <div class="issues-grid">
+        <div class="issue-card">
+          <div class="issue-cover"><a href="#" target="_blank"><img src="media/Serotine5.jpg" alt="#5"></a></div>
+          <div class="issue-info">
+            <div class="issue-number">#5</div><div class="issue-date"></div>
+            <ul class="issue-articles">
+              <li><a href="" target="_blank">7 Merveilles du ciel nocturne : les nuages noctulescents</a> </li>
+              <li><a href="" target="_blank">Sue-doku</a> </li>
+              <li><a href="" target="_blank">De la flore dans les régions polaires ?</a> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+    <details>
       <summary>Saison 1</summary>
       <div class="issues-grid">
         <div class="issue-card">
@@ -391,6 +434,9 @@ const ARTICLES = [
   { id:"aphantasie", title:"L'aphantasie", author:"Bacquet Isaora", topic:"psychologie", type:"article", issue:1, season:1, issueLabel:"#1 · Nov. 2025", href:"https://heyzine.com/flip-book/78d38fd9ec.html#page/4", flip:"articles/aphantasie.html" },
   { id:"aphantasie_sudoku", title:"Ceci n'est pas un bouquet de fleurs (Sudoku)", author:"Bosse Léo", topic:"sociologie", type:"jeu", issue:1, season:1, issueLabel:"#1 · Nov. 2025", href:"https://heyzine.com/flip-book/78d38fd9ec.html#page/16", flip:"articles/aphantasie_sudoku.html" },
   { id:"respirer_par_anus", title:"Peut-on respirer par l'anus ?", author:"Gachod Pierre", topic:"biologie", type:"article", issue:1, season:1, issueLabel:"#1 · Nov. 2025", href:"https://heyzine.com/flip-book/78d38fd9ec.html#page/18", flip:"articles/respirer_par_anus.html" },
+  { id:"nuages_noctulescents", title:"7 Merveilles du ciel nocturne : les nuages noctulescents", author:"Duchêne Léo", topic:"astrophysique", type:"article", issue:5, season:2, issueLabel:"#5 · Mai 2026", href:"", flip:"articles/nuages_noctulescents.html" },
+  { id:"Sue_doku", title:"Sue-doku", author:"Bosse Léo", topic:"physique", type:"jeu", issue:5, season:2, issueLabel:"#5 · Mai 2026", href:"", flip:"articles/Sue_doku.html" },
+  { id:"flore_polaire", title:"De la flore dans les régions polaires ?", author:"Strohmeyer Ninon", topic:"biologie", type:"article", issue:5, season:2, issueLabel:"#5 · Mai 2026", href:"", flip:"articles/flore_polaire.html" },
 ];
 
 const TOPIC_LABELS = {
