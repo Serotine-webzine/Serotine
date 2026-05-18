@@ -31,11 +31,12 @@ ARTICLES_DIR = "articles"
 INDEX_FILE   = "index.html"
 SITEMAP_FILE = "sitemap.xml"
 PAGE_404     = "404.html"
-SITE_URL     = "https://serotine-webzine.github.io/Serotine"
+SITE_URL     = "https://serotine.fr"
 OG_IMAGE     = f"{SITE_URL}/media/serotine_logo.png"
 
 # Issue metadata: issue number → (cover image, heyzine base URL, date label)
 ISSUE_META = {
+    5: ("media/Serotine5.jpg", "https://heyzine.com/flip-book/c5bd9067c1.html",  "Mai 2026"),
     4: ("media/Serotine4.jpg", "https://heyzine.com/flip-book/5edd108961.html", "Mars 2026"),
     3: ("media/Serotine3.jpg", "https://heyzine.com/flip-book/d5c17bee9a.html",  "Février 2026"),
     2: ("media/Serotine2.jpg", "https://heyzine.com/flip-book/5f6791f646.html",  "Décembre 2025"),
@@ -301,6 +302,9 @@ def generate_article_html(article: dict) -> str:
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{article["title"]} — Sérotine</title>
   <meta name="description" content="{description}">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="{page_url}">
 
   <!-- OpenGraph -->
   <meta property="og:type"        content="article">
