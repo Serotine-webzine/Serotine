@@ -513,10 +513,71 @@ f"""\
 
 
 # ══════════════════════════════════════════════
-#  6. INDEX.HTML INJECTOR
+#  6. FIX EXISTING ARTICLE PAGES
 # ══════════════════════════════════════════════
 
-def inject_index(articles: list[dict]) -> None:
+GITHUB_IO_BASE = "https://serotine-webzine.github.io/Serotine"
+
+def fix_existing_pages(articles: list[dict]) -> None:
+    """
+    Retroactively fixes any article HTML files that still contain
+    serotine-webzine.github.io URLs in og:url, og:image, twitter:image,
+    and adds a <link rel="canonical"> if missing.
+    Skips files that are already correct.
+    """
+    os.makedirs(ARTICLES_DIR, exist_ok=True)
+    fixed = 0
+    skipped = 0
+
+    # Build a lookup of known article ids for canonical URL construction
+    article_ids = {a["id"] for a in articles}
+
+    # Also scan any .html files present in articles/ even if not in CSV
+    html_files = [
+        f for f in os.listdir(ARTICLES_DIR) if f.endswith(".html")
+    ]
+
+    for fname in sorted(html_files):
+        path = os.path.join(ARTICLES_DIR, fname)
+        with open(path, "r", encoding="utf-8") as f:
+            content = f.read()
+
+        new_content = content
+
+        # 1. Replace any github.io base URL with serotine.fr
+        if GITHUB_IO_BASE in new_content:
+            new_content = new_content.replace(GITHUB_IO_BASE, SITE_URL)
+
+        # 2. Add <link rel="canonical"> if missing
+        if '<link rel="canonical"' not in new_content:
+            page_url = f"{SITE_URL}/{ARTICLES_DIR}/{fname}"
+            canonical_tag = f'  <link rel="canonical" href="{page_url}">\n'
+            # Insert just before the first <link rel="preconnect"...> or before </head>
+            if '<link rel="preconnect"' in new_content:
+                new_content = new_content.replace(
+                    '  <link rel="preconnect"',
+                    canonical_tag + '  <link rel="preconnect"',
+                    1  # only first occurrence
+                )
+            else:
+                new_content = new_content.replace("</head>", canonical_tag + "</head>", 1)
+
+        if new_content != content:
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(new_content)
+            print(f"  ✓ Corrigé : {path}")
+            fixed += 1
+        else:
+            skipped += 1
+
+    print(f"  → {fixed} fichier(s) corrigé(s), {skipped} déjà à jour.")
+
+
+# ══════════════════════════════════════════════
+#  7. INDEX.HTML INJECTOR
+# ══════════════════════════════════════════════
+
+def inject_index(articles: list[dict]) -> None:  # noqa: C901
     """Patches index.html in-place: JS data block + archives section."""
     if not os.path.exists(INDEX_FILE):
         print(f"  ⚠  {INDEX_FILE} introuvable — injection ignorée.")
@@ -568,6 +629,10 @@ def main():
     # 1+3 — Inject index.html (JS data block + Archives section)
     print("📄  Mise à jour de index.html…")
     inject_index(articles)
+
+    # 1b — Fix existing article pages (canonical + og:url)
+    print(f"\n🔧  Correction des pages existantes dans '{ARTICLES_DIR}/'…")
+    fix_existing_pages(articles)
 
     # 2 — Generate article pages (with OpenGraph meta)
     print(f"\n📝  Génération des pages articles dans '{ARTICLES_DIR}/'…")
