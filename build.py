@@ -217,7 +217,7 @@ def generate_archives_html(articles: list[dict]) -> str:
     cards = []
     for issue_num in sorted(by_issue.keys(), reverse=True):
         issue_articles = by_issue[issue_num]
-        meta     = ISSUE_META.get(issue_num, (f"media/Serotine{issue_num}.jpg", "#", ""))
+        meta     = ISSUE_META.get(issue_num, (f"media/serotine{issue_num}.webp", "#", ""))
         cover    = meta[0]
         base_url = meta[1]
         date_lbl = meta[2]
